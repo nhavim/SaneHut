@@ -1,0 +1,156 @@
+<head>
+    <title>Join Sane Hut Network</title>
+    <style>
+
+#main {
+    background: white;
+    width: 650px;
+    height:500px;
+    border:1px solid black;
+    margin:auto;
+    background:#f1f2f8;
+    box-shadow:1px 1px 1px 1px grey;
+}
+
+#row {
+    width:99%;
+    height:40px;
+    border:1px solid #F3F3F3;
+}
+
+.col {
+    color:green;
+    font-size: 20px;
+    width:32%;
+    height:89%;
+    border:1px solid #F3F3F3;
+    float:left;
+    margin-left:2px;
+}
+
+input {
+    height:30px;
+    width:200px;
+    border-radius:2px;
+}
+
+input [type="submit"] {
+    width:100px;
+}
+
+input:hover{border:1px solid red}
+input:hover{background:gray}
+input{font-size:25px}
+
+.r {
+    width:10px;
+    height:15px;
+    font-size:10px;
+}
+
+h5 {
+    font-size: 30px;
+    height: 20px;
+    color: green;
+}
+
+</style>
+<script type="text/javascript">
+function chkblnk(eid,errid)
+{
+var x=document.getElementById(eid).value;
+if(x=="")
+{
+document.getElementById(errid).innerHTML="pls fill this field";
+}
+else
+{
+document.getElementById(errid).innerHTML="";
+}
+}
+
+function chkAplha(event,err)
+{
+if(!((event.which>=65 && event.which<=90) || (event.which>=97 && event.which<=122) || event.which==0 || event.which==8))
+{
+document.getElementById(err).innerHTML="invalid name format";
+return false;
+}
+}
+
+function chkeid()
+{
+var e=document.getElementById("e").value;
+var atpos=e.indexOf("@");
+var dotpos=e.lastIndexOf(".");
+if(atpos<4 || dotpos<atpos+3)
+{
+document.getElementById("error2").innerHTML="invalid email";
+}
+else
+{
+document.getElementById("error2").innerHTML="";
+}
+//alert(atpos+" "+dotpos);
+}
+</script>
+</head>
+<body>
+<div id="main">
+
+<h5 align="center">Sign Up For Sane Hut Network</h5>
+
+<div id="row" style="color:black">
+    <div class="col">Your First Name</div>
+    <div class="col"><input type="text" id="fn"  onkeypress="return chkAplha(event,'error')" onblur="chkblnk('fn','error')"/></div>
+    <div class="col" id="error" style="color:red"></div>
+</div>
+
+<div id="row" style="color:black">
+    <div class="col">Your Last Name</div>
+    <div class="col"><input type="text" id="ln" onblur="chkblnk('ln','error1')"/></div>
+    <div class="col" id="error1" style="color:red"></div>
+</div>
+
+<div id="row" style="color:black">
+    <div class="col">Your Email id</div>
+    <div class="col">
+    <input type="text" id="e" onblur="chkeid()"/></div>
+<div class="col" id="error2" style="color:red"></div>
+</div>
+
+<div id="row" style="color:black">
+    <div class="col">Your Password</div>
+    <div class="col"><input type="password" id="p"  onblur="chkblnk('p','error3')"/></div>
+    <div class="col" id="error3" style="color:red"></div>
+</div>
+
+<div id="row" style="color:black">
+    <div class="col">Conform Pass</div>
+    <div class="col"><input type="password" id="cp"  onblur="chkblnk('cp','error4')"/></div>
+    <div class="col" style="color:red" id="error4"></div>
+</div>
+
+<div>
+    <div id="row" style="color:black">
+        <div class="col">Phone Number</div>
+        <div class="col"><input type="text" id="ln" onblur="chkblnk('ln','error5')"/></div>
+        <div class="col" id="error5" style="color:red"></div>
+    </div>
+    <div class="col" style="color:red" id="error5"></div>
+</div>
+
+<div id="row" style="color: brown;">
+    <div><input type="submit"></div>
+    <div class="row" style="color: brown;"></div>
+</div>
+
+<div id="row" style="color: red;">Do you already have an account?
+    <a href="form.html">Sign In</a>
+</div>
+
+</div>
+
+</body>
+
+</html>
